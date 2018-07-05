@@ -1,0 +1,26 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./jsonExportExcel.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    $('#wwo').click(function(){
+		        var data = {
+                    "title":{"company":"集团","date":"日期"},
+                    "data":[
+                            {"company":"腾讯",'date':'2015-08-24'},
+                            {"company":"百度",'date':'2015-08-24'}                       
+                        ]
+                    };
+		        if(data == '')
+		            return;
+		        JSONToExcelConvertor(data.data, "Report", data.title);
+		    });
+		});	
+	</script>
+</head>
+<body>
+	<input type="button" id="wwo" value="导出" />
+</body>
+</html>
